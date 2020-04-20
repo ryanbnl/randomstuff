@@ -7,19 +7,19 @@ The backend consists of two main functions: providing a set <blabla short explai
 
 To check for infection: first load the list of data dumps from /exposed.
 
-for each (dump-you-havent-processed-or-which-has-a-new-hash)
+	for each (dump-you-havent-processed-or-which-has-a-new-hash)
 
-	load data from `uri_filter` into your cocofilter
-	run your local interactions through the cocofilter.
+		load data from `uri_filter` into your cocofilter
+		run your local interactions through the cocofilter.
 
-	if ( interaction in cocofilter )
-		download the big list of ids from uri_data and check them
-	else
-		stop you're not exposed
+		if ( interaction in cocofilter )
+			download the big list of ids from uri_data and check them
+		else
+			stop you're not exposed
 
 ## /exposed
 
-GET /{version}/exposed
+	GET /{version}/exposed
 
 Response:
 
@@ -38,7 +38,7 @@ Response:
 
 Response description:
 
-Returns an json array containing a list of data batches in reverse-chronological order - so the latest update comes first. The timespan of the file is included along with a relative url to the coco filter binary and to the data file binary.
+	Returns an json array containing a list of data batches in reverse-chronological order - so the latest update comes first. The timespan of the file is included along with a relative url to the coco filter binary and to the data file binary. The hash identifies the uri_data and thus changes if the data changes (so mistakes can be fixed).
 
 ...
 ...
