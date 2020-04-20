@@ -67,6 +67,29 @@ Response description:
 	<example ExposedDeviceIdentifiersFormat>
 
 
+## /meta/configuration
+
+Returns configuration for the risk algorithm:
+
+see: end of page 11 of the WP https://github.com/DP-3T/documents/blob/master/DP3T%20White%20Paper.pdf
+
+
+## /meta/authorities
+
+Returns a list containing the infection authority per region/country. Where this api can be found so you can check your risks if you've been abroad.
+
+	GET /meta/authorities
+
+	application/json
+
+	{
+		"NL": "",
+		"DE": "",
+		...
+	}
+
+*Ryan: ideally this would be a published at a single well known source globally and not included in an api.*
+
 # Messages
 
 ## CoCoFilterFormat
@@ -76,5 +99,3 @@ Define it.
 ## ExposedDeviceIdentifiersFormat
 
 Define it.
-
-
