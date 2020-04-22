@@ -6,7 +6,7 @@ The aim of this proposal is twofold: firstly to improve the existing specificati
 
 <Ryan: move this to a different proposal? it's orthogonal to data distribution although it will be required >
 
-Thirdly and finally, we wish to add an mechanism to the API which supports the dynamic discovery of DP3T endpoints for different jurisdictions or countries. This enables the implementations to support infection checking across borders - something which is required in places such as mainland Europe. Especially around borders :)
+Thirdly and finally, we wish to add an mechanism to the API which supports the dynamic discovery of DP3T endpoints for different jurisdictions or countries. This enables the implementations to support infection checking across borders - something which is required in places such as continental Europe. Especially around borders :)
 
 ## Operational setting
 
@@ -96,9 +96,9 @@ To check for infection: first load the list of cuckoo-filters from /exposed.
 	for each (cuckoo-filter in cuckoo-filters)
 
 		load data from `uri_filter` into your cuckoo-filter
-		run your local interaction emphIDs through the cuckoo-filter.
+		run your local interaction EphIDs through the cuckoo-filter.
 
-		if ( any emphID are found in the cuckoo-filter )
+		if ( any EphID are found in the cuckoo-filter )
 			false positives are possible, so download the big list of ids from uri_data and check them
 		else
 			stop because you're not exposed
@@ -113,7 +113,7 @@ Non functional expectations are
 
 * Handle at least one fetch/day from the mobiles (millions of request per day, thousands per second).
 * Very resistant to repeated/superfluent fetches
-* Bad behaviour of one should not jeapordie _delivery_ to others.
+* Bad behaviour of one should not jeopardize _delivery_ to others.
 * Little or no security
 * Tamperproofing is desirable - but for most protocols not uber critical as the match-space is very large and thus resistant against false positives. The tampering is a risk for not reporting infected people that they are infected (which is in fact what some device owners may well desire, e.g. to keep their jobs).
 
@@ -133,7 +133,7 @@ Dirkx: given
 	{
 		[{
 			time_stamp_from: 'isodatetime',
-			time_stamp_to: 'iso',
+			time_stamp_to: 'isodatetime',
 			hash: 'hash_which_identifies_this_for_changes'
 			uri_filter: '/whatever/the/uri/is/for/the/coocoofilter'
 			uri_data: '/whatever/the/uri/is/for/the/big/binary'
