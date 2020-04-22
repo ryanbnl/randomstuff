@@ -6,7 +6,7 @@ The aim of this proposal is twofold: firstly to improve the existing specificati
 
 <Ryan: move this to a different proposal? it's orthogonal to data distribution although it will be required >
 
-Thirdly and finally, we wish to add an mechanism to the API which supports the dynamic discovery of DP3T endpoints for different jurisdiction or countries. This enables the implementations to support infection checking across borders - something which is required in places such as mainland Europe. Especially around borders :)
+Thirdly and finally, we wish to add an mechanism to the API which supports the dynamic discovery of DP3T endpoints for different jurisdictions or countries. This enables the implementations to support infection checking across borders - something which is required in places such as mainland Europe. Especially around borders :)
 
 
 ## Big picture verview for app developers who haven't read anything else
