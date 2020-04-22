@@ -8,8 +8,6 @@ The aim of this proposal is twofold: firstly to improve the existing specificati
 
 Thirdly and finally, we wish to add an mechanism to the API which supports the dynamic discovery of DP3T endpoints for different jurisdictions or countries. This enables the implementations to support infection checking across borders - something which is required in places such as mainland Europe. Especially around borders :)
 
-
-
 ## Operational setting
 
 Logical/abstract architecture - to help discuss the non-functional, information security and compliance aspects of any implementation. And help guide what needs to be arranged in terms of gouvernance.
@@ -51,16 +49,18 @@ This allows for API optimisation.
 
 
 ## Overview for app developers
+=======
+## Big picture overview for app developers who haven't read anything else
 
 <Ryan: I want the document to be self-contained, that makes it easier to onboard developers or at least parse the rest>
 
-<TODO: dummies description of the process>
+![Process simplified](process-simplified.png)
 
-To check for infection: first load the list of data dumps from /exposed.
+See https://github.com/DP-3T/documents/blob/master/DP3T-Slideshow.pdf
 
 #### Design 1 DP3T and TCN:
 
-	for each (dump-you-havent-processed-or-which-has-a-new-hash)
+	for each (cuckoo-filter in cuckoo-filters)
 		take the seed; reconstruct the N broadcasted ID
 			for each id reconstructed
 				check them in the list of local ids received.
@@ -68,28 +68,40 @@ To check for infection: first load the list of data dumps from /exposed.
 
 ##### Design 2:
 
-	for each (dump-you-havent-processed-or-which-has-a-new-hash)
-		load data from `uri_filter` into your cocofilter
-			check each of your local ids for precence in the cocofilter.
+	for each (cuckoo-filter in cuckoo-filters)
+		load data from `uri_filter` into your cuckoo-filter
+			check each of your local ids for precence in the cuckoo-filter.
 					stop if you are in it.
 
 
 Optionally - if Design 2 is to carry metadata (like TCN and PACT) or if the filter is very small/'too' efficent
 
-	for each (dump-you-havent-processed-or-which-has-a-new-hash)
-		load data from `uri_filter` into your cocofilter
-			check each of your local ids for precence in the cocofilter.
-			if ( interaction in cocofilter )
+	for each (cuckoo-filter in cuckoo-filters)
+		load data from `uri_filter` into your cuckoo-filter
+			check each of your local ids for precence in the cuckoo-filter.
+			if ( interaction in cuckoo-filter )
 				download a partial list of ids from uri_data	
 					stop if you are in it.
 
 #### PACT and TCN:
 
-	for each (dump-you-havent-processed-or-which-has-a-new-hash)
+	for each (cuckoo-filter in cuckoo-filters)
 		check them in the list of local ids received.
 			stop if you are in it.
 
 # Endpoints -- CDN / bulk distribition
+
+To check for infection: first load the list of cuckoo-filters from /exposed.
+
+	for each (cuckoo-filter in cuckoo-filters)
+
+		load data from `uri_filter` into your cuckoo-filter
+		run your local interaction emphIDs through the cuckoo-filter.
+
+		if ( any emphID are found in the cuckoo-filter )
+			false positives are possible, so download the big list of ids from uri_data and check them
+		else
+			stop because you're not exposed
 
 ## Existing Endpoints
 
