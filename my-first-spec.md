@@ -78,9 +78,23 @@ Optionally - if Design 2 is to carry metadata (like TCN and PACT) or if the filt
 		check them in the list of local ids received.
 			stop if you are in it.
 
-# Endpoints
+# Endpoints -- CDN / bulk distribition
 
-## /exposed --- CDN end-point
+Below end points are all for the CDN / bulk distribution.
+
+Non functional expectations are
+
+* Handle at least one fetch/day from the mobiles (millions of request per day, thousands per second).
+* Very resistant to repeated/superfluent fetches
+* Bad behaviour of one should not jeapordie _delivery_ to others.
+* Little or no security
+* Tamperproofing is desirable - but for most protocols not uber critical as the match-space is very large and thus resistant against false positives. The tampering is a risk for not reporting infected people that they are infected (which is in fact what some device owners may well desire, e.g. to keep their jobs).
+
+#### general option/concern
+
+Sign all responses with a RFC 3161 timestamp/signature
+
+## /exposed 
 
 	GET /{version}/exposed
 
