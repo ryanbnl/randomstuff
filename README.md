@@ -4,9 +4,9 @@ This proposal is based on the D3PT API specification found [here](https://github
 
 The aim of this proposal is twofold: firstly to improve the existing specification by including more details, such as extra HTTP headers. This helps to ensure compatibility between implementations. Secondly, we wish to extend the API to allow for a more efficient distribution of the Cuckoo Filter binary data. These filters will be downloaded by potentially hundreds of millions of users daily so there is a real benefit to doing so efficiently.
 
-<Ryan: move this to a different proposal? it's orthoginal to data distribution although it will be required >
+<Ryan: move this to a different proposal? it's orthogonal to data distribution although it will be required >
 
-Thirdly and finally, we wish to add an mechignism to the API which supports the dynamic discovery of DP3T endpoints for different juristrictions or countries. This enables the implementations to support infection checking across borders - something which is required in places such as mainland Europe. Especially around borders :)
+Thirdly and finally, we wish to add an mechanism to the API which supports the dynamic discovery of DP3T endpoints for different jurisdiction or countries. This enables the implementations to support infection checking across borders - something which is required in places such as mainland Europe. Especially around borders :)
 
 
 ## Big picture verview for app developers who haven't read anything else
