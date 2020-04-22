@@ -124,12 +124,12 @@ This header includes a link to the previously uploaded file. This allows the app
 
 We provide the following endpoints which all have the same interface as `GET /v1/exposed/data/{batch-id}`.
 
-GET /v1/exposed/data/24h
-GET /v1/exposed/data/48h
-GET /v1/exposed/data/72h
-GET /v1/exposed/data/1w
-GET /v1/exposed/data/2w
-GET /v1/exposed/data/all
+	GET /v1/exposed/data/24h
+	GET /v1/exposed/data/48h
+	GET /v1/exposed/data/72h
+	GET /v1/exposed/data/1w
+	GET /v1/exposed/data/2w
+	GET /v1/exposed/data/all
 
 <Ryan: I would appreciate feedback on the data split and uris>
 
