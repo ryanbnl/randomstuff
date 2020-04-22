@@ -9,11 +9,13 @@ The aim of this proposal is twofold: firstly to improve the existing specificati
 Thirdly and finally, we wish to add an mechanism to the API which supports the dynamic discovery of DP3T endpoints for different jurisdictions or countries. This enables the implementations to support infection checking across borders - something which is required in places such as mainland Europe. Especially around borders :)
 
 
-## Big picture verview for app developers who haven't read anything else
+## Big picture overview for app developers who haven't read anything else
 
 <Ryan: I want the document to be self-contained, that makes it easier to onboard developers or at least parse the rest>
 
-<TODO: dummies description of the process>
+![Process simplified](process-simplified.png)
+
+See https://github.com/DP-3T/documents/blob/master/DP3T-Slideshow.pdf
 
 To check for infection: first load the list of data dumps from /exposed.
 
