@@ -17,17 +17,17 @@ Thirdly and finally, we wish to add an mechanism to the API which supports the d
 
 See https://github.com/DP-3T/documents/blob/master/DP3T-Slideshow.pdf
 
-To check for infection: first load the list of data dumps from /exposed.
+To check for infection: first load the list of cuckoo-filters from /exposed.
 
-	for each (dump-you-havent-processed-or-which-has-a-new-hash)
+	for each (cuckoo-filter)
 
-		load data from `uri_filter` into your cocofilter
-		run your local interactions through the cocofilter.
+		load data from `uri_filter` into your cuckoo-filter
+		run your local interaction emphIDs through the cuckoo-filter.
 
-		if ( interaction in cocofilter )
-			download the big list of ids from uri_data and check them
+		if ( any emphID are found in the cuckoo-filter )
+			false positives are possible, so download the big list of ids from uri_data and check them
 		else
-			stop you're not exposed
+			stop because you're not exposed
 
 ## Existing Endpoints
 
