@@ -13,7 +13,7 @@ Thirdly and finally, we wish to add an mechanism to the API which supports the d
 
 <Ryan: I want the document to be self-contained, that makes it easier to onboard developers or at least parse the rest>
 
-<TODO: dummies description of the process>
+![Process simplified](process-simplified.png)
 
 To check for infection: first load the list of data dumps from /exposed.
 
